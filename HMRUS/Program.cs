@@ -1,4 +1,5 @@
 ﻿using System;
+using HMRUS.Domain;
 
 namespace HMRUS
 {
@@ -8,5 +9,6 @@ namespace HMRUS
         {
             
         }
+      
     }
 }

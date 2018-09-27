@@ -6,5 +6,9 @@ namespace HMRUS.Domain
 {
     class Menu
     {
+        public void MainMenu()
+        {
+
+        }
     }
 }
