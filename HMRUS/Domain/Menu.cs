@@ -8,6 +8,18 @@ namespace HMRUS.Domain
     {
         public void MainMenu()
         {
+            
+            bool loopMainMenu = true;
+            while (loopMainMenu)
+            {
+                Console.WriteLine("========================================");
+                Console.WriteLine("=====WELCOME TO HORRORMOVIES R'us=======");
+                Console.WriteLine("     Our featured films are:");
+                Console.WriteLine(ShowMovieTitle ));
+            }
+        }
+        public static void ShowMovieTitle(string title)
+        {
 
         }
     }

@@ -4,14 +4,14 @@ using System.Text;
 
 namespace HMRUS.Domain
 {
-    class Theatre
+    public class Theatre
     {
-        public string MovieTitle { get; set; }
-        public string TheatreNumber { get; set; }//Salongsnummer
-        public int TheatreSeats { get; set; }
-        public string MoviePlot { get; set; }
-        public string MovieDuration { get; set; }
-        public decimal MoviePrice { get; set; }
+        public string MovieTitle { get; }
+        public string TheatreNumber { get; }//Salongsnummer
+        public int TheatreSeats { get; }
+        public string MoviePlot { get; }
+        public string MovieDuration { get; }
+        public decimal MoviePrice { get; }
 
         public Theatre(string movieTitle, string theatreNumber, int theatreSeats, string moviePlot, string movieDuration, decimal moviePrice)
         {
