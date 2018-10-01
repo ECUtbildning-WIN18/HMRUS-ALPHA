@@ -6,7 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Domain\" />
+    <Reference Include="System.Speech">
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\System.Speech\3.0.0.0__31bf3856ad364e35\System.Speech.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech.resources">
+      <HintPath>..\..\..\..\Windows\assembly\GAC_MSIL\System.Speech.resources\3.0.0.0_sv_31bf3856ad364e35\System.Speech.resources.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
