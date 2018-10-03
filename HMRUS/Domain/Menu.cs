@@ -52,9 +52,8 @@ namespace HMRUS.Domain
         }
         public void MainMenu()
         {
+            Console.ResetColor();
             Console.Clear();
-            //SpeechSynthesizer synth = new SpeechSynthesizer();
-            //synth.Speak("Welcome to horrormovies are us!");
             Console.WriteLine("========================================");
             Console.WriteLine("=====WELCOME TO HORRORMOVIES R'us=======");
             Console.WriteLine("     Our featured films are:");
@@ -64,7 +63,8 @@ namespace HMRUS.Domain
             }
             Console.WriteLine("");
             Console.WriteLine("Choose movie by pressing the corresponding number and then 'Enter'");
-            //Console.WriteLine("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAt any time you can press 'Esc' to return to Main menu");
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.Speak("Welcome to horrormovies are us!");
 
             try
             {
@@ -89,16 +89,25 @@ namespace HMRUS.Domain
             Console.WriteLine("\n" + $"Number of seats: {theatreList[choiceA].TheatreSeats}");
             Console.WriteLine("\n" + $"Price {movieList[choiceA].MoviePrice:c}");
             Console.WriteLine("\nDo you want to order ticket(s) for this movie?");
-            Console.WriteLine("\n(O)K or (C)ancel");
+            Console.WriteLine("\n(O)K to proceed or (C)ancel to return to list of movies.");
+            SpeechSynthesizer synth = new SpeechSynthesizer();
+            synth.Speak("This one is really scary!");
             string buyChoice = Console.ReadLine();
 
-            if (buyChoice.ToUpper() == "O")//(buyChoice == "o" || buyChoice == "O")
+            if (buyChoice.ToUpper() == "O")
             {
                 BuyTicket(choiceA);
             }
-            else
+            else if(buyChoice.ToUpper() == "C")
             {
                 MainMenu();
+            }
+            else
+            {
+                Console.WriteLine("I'm sorry, I didn't register an 'O' or 'C'");
+                Console.WriteLine("Press any key to try again.");
+                Console.ReadKey();
+                MovieSubMenu(choiceA);
             }
         }
         public void BuyTicket(int choiceB)
@@ -121,7 +130,7 @@ namespace HMRUS.Domain
                 if (tickets > theatreList[choiceB].TheatreAvailableSeats)
                 {
                     Console.WriteLine("You're trying to buy more tickets than are available, bell end!");
-                    Console.WriteLine("Präss änny kii to traj agän");
+                    Console.WriteLine("Press any key to return to try again.");
                     Console.ReadKey();
                     BuyTicket(choiceB);
                 }
@@ -132,9 +141,20 @@ namespace HMRUS.Domain
                     Console.WriteLine("Proceed to checkout? (O)k or (C)ancel to return to Main menu.");
                     string proceed = Console.ReadLine();
                     if (proceed.ToUpper() == "O")
+                    {
                         PayTicket(ticketSum, choiceB, tickets);
-                    else
+                    }
+                    else if (proceed.ToUpper() == "C")
+                    {
                         MainMenu();
+                    }
+                    else
+                    {
+                        Console.WriteLine("I'm sorry, I didn't register an 'O' or 'C'");
+                        Console.WriteLine("Press any key to try again.");
+                        Console.ReadKey();
+                        MovieSubMenu(choiceB);
+                    }
                 }
             }
             catch
@@ -166,7 +186,7 @@ namespace HMRUS.Domain
             string confirmPayment = Console.ReadLine();
             if (confirmPayment.ToUpper() == "Y")
             {
-                Console.Clear();
+                Console.WriteLine("");
                 Console.WriteLine($"Your creditcard will now be charged with: {ticketSum} ");
                 PrintTicket(choiceC, ticketSum, tickets);
             }
@@ -185,7 +205,9 @@ namespace HMRUS.Domain
             Random randomizer = new Random();
             int confirmationNumber = randomizer.Next(1000, 999999999);
 
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("=====WELCOME TO HORRORMOVIES R'us=======");
             Console.WriteLine("Here is a summary of your order:");
             Console.WriteLine("");
