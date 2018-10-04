@@ -19,37 +19,30 @@ namespace HMRUS.Domain
         const string MoviePlot10 = "A butcher is struck by a meteor but instead of dying he’s able \nto develop autonomous meatgrinders that can also walk....";
         const string MoviePlot11 = "Everything you thought you knew about My little pony - DEBUNKED";
         #endregion
-        List<Movie> movieList = new List<Movie>();
-        List<Theatre> theatreList = new List<Theatre>();
-        public Menu()
+        List<Movie> movieList = new List<Movie>()
         {
-            #region Theatres
-            theatreList.Add(new Theatre("Theatre no.1", 40));
-            theatreList.Add(new Theatre("Theatre no.2", 50));
-            theatreList.Add(new Theatre("Theatre no.2", 45));
-            theatreList.Add(new Theatre("Theatre no.4", 60));
-            theatreList.Add(new Theatre("Theatre no.5", 45));
-            theatreList.Add(new Theatre("Theatre no.6", 275));
-            theatreList.Add(new Theatre("Theatre no.7", 55));
-            theatreList.Add(new Theatre("Theatre no.8", 80));
-            theatreList.Add(new Theatre("Theatre no.9", 40));
-            theatreList.Add(new Theatre("Theatre no.10", 35));
-            theatreList.Add(new Theatre("Theatre no.11", 15));
-            #endregion
-            #region Movies
-            movieList.Add(new Movie("Killer Asparagus", MoviePlot1, "3h 45min.", 20));
-            movieList.Add(new Movie("Return of the  Haemorrhaging turnip", MoviePlot2, "4h 52min.", 27));
-            movieList.Add(new Movie("Project X gone array", MoviePlot3, "3h 21min.", 12));
-            movieList.Add(new Movie("Attack of the space-locusts", MoviePlot4, "0h 26min.", 7));
-            movieList.Add(new Movie("Glenn reaps havoc (SWE, eng. subtitles)", MoviePlot5, "1h 52min.", 10));
-            movieList.Add(new Movie("Santa’s evil cousin", MoviePlot6, "8h 19min.", 55));
-            movieList.Add(new Movie("Devils orchard (HUN, eng. subtitles)", MoviePlot7, "3h 24min.", 12));
-            movieList.Add(new Movie("Camp men on holiday", MoviePlot8, "4h 52min.", 15));
-            movieList.Add(new Movie("Death inc.", MoviePlot9, "2h 26min.", 12));
-            movieList.Add(new Movie("Meatgrinder mania", MoviePlot10, "0h 6min.", 2));
-            movieList.Add(new Movie("My little pony (Directors cut)", MoviePlot11, "17h 46min.", 175));
-            #endregion
-        }
+            new Movie("Killer Asparagus", MoviePlot1, "3h 45min.", 20),
+            new Movie("Return of the  Haemorrhaging turnip", MoviePlot2, "4h 52min.", 27),
+            new Movie("Project X gone array", MoviePlot3, "3h 21min.", 12),
+            new Movie("Attack of the space-locusts", MoviePlot4, "0h 26min.", 7),
+            new Movie("Glenn reaps havoc (SWE, eng. subtitles)", MoviePlot5, "1h 52min.", 10),
+            new Movie("Santa’s evil cousin", MoviePlot6, "8h 19min.", 55),
+            new Movie("Devils orchard (HUN, eng. subtitles)", MoviePlot7, "3h 24min.", 12),
+            new Movie("Camp men on holiday", MoviePlot8, "4h 52min.", 15),
+            new Movie("Death inc.", MoviePlot9, "2h 26min.", 12),
+            new Movie("Meatgrinder mania", MoviePlot10, "0h 6min.", 2),
+            new Movie("My little pony (Directors cut)", MoviePlot11, "17h 46min.", 175)
+        };
+        List<Theatre> theatreList = new List<Theatre>()
+        {
+            new Theatre("Theatre no.1", 40),new Theatre("Theatre no.2", 50),
+            new Theatre("Theatre no.2", 45),new Theatre("Theatre no.4", 60),
+            new Theatre("Theatre no.5", 45),new Theatre("Theatre no.6", 275),
+            new Theatre("Theatre no.7", 55),new Theatre("Theatre no.8", 80),
+            new Theatre("Theatre no.9", 40),new Theatre("Theatre no.10", 35),
+            new Theatre("Theatre no.11", 15)
+        }; 
+        
         public void MainMenu()
         {
             Console.ResetColor();
